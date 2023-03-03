@@ -1,7 +1,6 @@
 import client from '../sanity.config';
 import imageUrlBuilder from '@sanity/image-url';
 import { useState } from 'react';
-import classnames from 'classnames';
 
 const builder = imageUrlBuilder(client);
 
@@ -12,12 +11,7 @@ export default function ServiceCard({ service }) {
 
   const [hovered, setHovered] = useState(false);
 
-  const cardClasses = classnames(
-    'bg-zinc-800 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:-translate-y-1',
-    {
-      'scale-105': hovered,
-    }
-  );
+  const cardClasses = `bg-zinc-800 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:-translate-y-1 ${hovered ? 'scale-105' : ''}`;
 
   return (
     <div
