@@ -21,32 +21,34 @@ export default function StylistPage({ stylist }) {
         </div>
 
         <div>
-          {stylist.announcements.map((announcement) => (
-            <AnnouncementBanner announcement={announcement} key={announcement._key} />
-          ))}
-        </div>
+  {stylist.announcements && stylist.announcements.length > 0 && stylist.announcements.map((announcement) => (
+    <AnnouncementBanner announcement={announcement} key={announcement._key} />
+  ))}
+</div>
 
-        <div className="my-32"><SectionDivider bgColor="bg-purple-300" orientation="horizontal"/></div>
+          <div className="my-32"><SectionDivider bgColor="bg-purple-300" orientation="horizontal"/></div>
 
-        <div className="mb-10">
-          <h2 className="text-xl font-bold mb-4">Services</h2>
-          <Masonry breakpointCols={breakpointColumnsObj} className="flex w-full" columnClassName="px-4">
-            {stylist.services.map((service) => (
-              <div key={service._key} className="mb-8 w-full md:w-auto">
-                <ServiceCard service={service} />
-              </div>
-            ))}
-          </Masonry>
-        </div>
-
-        <div className="my-32"><SectionDivider bgColor="bg-purple-300" orientation="horizontal"/></div>
-
-        {stylist.gallery.length > 0 && (
           <div className="mb-10">
-            <h2 className="text-xl font-bold mb-4">Gallery</h2>
-            <Gallery images={stylist.gallery} />
-          </div>
-        )}
+  <h2 className="text-xl font-bold mb-4">Services</h2>
+  {stylist.services && stylist.services.length > 0 && (
+    <Masonry breakpointCols={breakpointColumnsObj} className="flex w-full" columnClassName="px-4">
+      {stylist.services.map((service) => (
+        <div key={service._key} className="mb-8 w-full md:w-auto">
+          <ServiceCard service={service} />
+        </div>
+      ))}
+    </Masonry>
+  )}
+</div>
+
+        <div className="my-32"><SectionDivider bgColor="bg-purple-300" orientation="horizontal"/></div>
+
+        {stylist && stylist.gallery && stylist.gallery.length > 0 && (
+  <div className="mb-10">
+    <h2 className="text-xl font-bold mb-4">Gallery</h2>
+    <Gallery images={stylist.gallery} />
+  </div>
+)}
 
       </div>
     </div>
