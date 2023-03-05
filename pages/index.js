@@ -2,10 +2,11 @@ import React from 'react';
 import client from '../sanity.config';
 import Announcement from '../components/Announcement';
 import HeroSection from '../components/HeroSection';
+import Stylists from '../components/Stylists';
 
 
 
-export default function IndexPage({ announcements }) {
+export default function IndexPage({ announcements, stylists }) {
   return (
     <div>
       <section>
@@ -19,6 +20,9 @@ export default function IndexPage({ announcements }) {
           </li>
         ))}
      </ul>
+     </section>
+     <section>
+     <Stylists stylists={stylists} />
      </section>
      </div>
   );

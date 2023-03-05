@@ -2,7 +2,7 @@ import React from 'react';
 import client from '../sanity.config';
 import Stylists from '../components/Stylists';
 
-export default function IndexPage({ stylists }) {
+export default function StylistPage({ stylists }) {
   return (
     <div>
       <Stylists stylists={stylists} />
