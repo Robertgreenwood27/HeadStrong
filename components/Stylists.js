@@ -17,14 +17,16 @@ export default function Stylists({ stylists }) {
         {stylists.map((stylist) => (
           <li key={stylist._id}>
             <Link href={`/stylists/${stylist.slug.current}`} legacyBehavior>
-              <a className="block hover:opacity-75" aria-label={`Learn more about ${stylist.name}`}>
+              <a className="block hover:opacity-75 bg-white text-black rounded-lg border-2 border-gray-300" aria-label={`Learn more about ${stylist.name}`}>
                 <img
-                  className="object-cover w-full h-64 rounded-lg mb-4"
+                  className="object-cover w-full h-full rounded-t-lg"
                   src={urlFor(stylist.picture).width(600).height(1200).crop('entropy').url()}
                   alt={stylist.name}
                 />
-                <h2 className="text-xl font-bold mb-2">{stylist.name}</h2>
-                <p className="text-gray-600">{stylist.description}</p>
+                <div className="p-4">
+                  <h2 className="text-lg font-bold mb-2">{stylist.name}</h2>
+                  <p className="text-gray-600">{stylist.description}</p>
+                </div>
               </a>
             </Link>
           </li>
@@ -33,5 +35,3 @@ export default function Stylists({ stylists }) {
     </div>
   );
 }
-
-
