@@ -7,6 +7,7 @@ const navData = [
   {
     name: "Book",
     href: "https://headstrong.glossgenius.com/",
+    target: "_blank",
   },
   {
     name: "Services",
@@ -50,7 +51,7 @@ export default function Header() {
       <nav className="hidden md:flex space-x-10 items-center">
         {navData.map((n) => {
           return (
-            <Link key={n.name} href={n.href} style={{ zIndex: 9999 }}>
+            <Link key={n.name} href={n.href} target={n.target} style={{ zIndex: 9999 }}>
               {n.name}
             </Link>
           );
