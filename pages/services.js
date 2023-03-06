@@ -61,6 +61,6 @@ export async function getStaticProps() {
 
   return {
     props: { stylists },
-    revalidate: 60, // revalidate every 60 seconds
+    revalidate: 600, // revalidate every 10 mins
   };
 }
