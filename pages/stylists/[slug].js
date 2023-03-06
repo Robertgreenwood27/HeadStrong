@@ -6,7 +6,7 @@ import Masonry from "react-masonry-css";
 import AnnouncementBanner from "../../components/StylistAnnouncement";
 import SectionDivider from "../../components/Divider";
 import Gallery from "../../components/Gallery";
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function StylistPage({ stylist }) {
@@ -115,7 +115,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { stylist },
-    revalidate: 600, // revalidate every 10 mins
+    revalidate: 600,
   };
 }
 

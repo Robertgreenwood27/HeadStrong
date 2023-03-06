@@ -19,8 +19,7 @@ export default function Announcement({ announcement }) {
 
   return (
     <div className="my-40">
-      <Link href={`/announcements/${slug.current}`} legacyBehavior>
-        <a className="block rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 w-4/5 m-auto mt-2">
+        <div className="block rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 w-4/5 m-auto mt-2">
           <div className="relative flex items-center justify-center rounded-lg overflow-hidden h-64">
             <img
               src={imageUrl}
@@ -32,8 +31,8 @@ export default function Announcement({ announcement }) {
               <p className="text-gray-600 text-lg">{description}</p>
             </div>
           </div>
-        </a>
-      </Link>
+        </div>
+
     </div>
   );
 }

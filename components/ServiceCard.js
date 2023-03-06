@@ -7,7 +7,7 @@ const builder = imageUrlBuilder(client);
 export default function ServiceCard({ service }) {
   const { name, imageUrl, description } = service;
 
-  const imgUrl = builder.image(imageUrl).width(1024).height(1024).auto('format').fit('crop').url();
+  const imgUrl = imageUrl ? builder.image(imageUrl).width(1024).height(1024).auto('format').fit('crop').url() : null;
 
   const [hovered, setHovered] = useState(false);
 
@@ -19,7 +19,7 @@ export default function ServiceCard({ service }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <img src={imgUrl} alt={name} className="rounded-lg mb-4" />
+      {imgUrl && <img src={imgUrl} alt={name} className="rounded-lg mb-4" />}
       <h2 className="text-xl font-bold mb-2 text-white">{name}</h2>
       <p className="text-gray-300">{description}</p>
     </div>

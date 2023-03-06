@@ -4,8 +4,6 @@ import Announcement from '../components/Announcement';
 import HeroSection from '../components/HeroSection';
 import Stylists from '../components/Stylists';
 
-
-
 export default function IndexPage({ announcements, stylists }) {
   return (
     <div>
@@ -24,6 +22,9 @@ export default function IndexPage({ announcements, stylists }) {
      <section>
      <Stylists stylists={stylists} />
      </section>
+     {/* 
+     I need to show services here
+     */}
      </div>
   );
 }
@@ -37,6 +38,6 @@ export async function getStaticProps() {
       stylists,
       announcements,
     },
-    revalidate: 600, // revalidate every 10 mins
+    revalidate: 600,
   };
 }

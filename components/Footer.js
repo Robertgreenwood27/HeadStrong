@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaCog } from 'react-icons/fa';
+
 
 export default function Footer() {
   return (
@@ -67,6 +68,17 @@ export default function Footer() {
         <p className="mt-8 text-center text-sm">
           &copy; 2023 Headstrong Salon. All rights reserved.
         </p>
+        <a
+    href="https://headstrongstudio.vercel.app"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mr-4 text-2xl md:text-3xl"
+    aria-label="Admin"
+    style={{ color: '#404040' }}
+    onClick={() => window.open("https://headstrongstudio.vercel.app", "_blank")}
+  >
+    <FaCog />
+  </a>
       </div>
     </footer>
   );
