@@ -37,6 +37,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="mr-4 text-2xl md:text-3xl"
               aria-label="Facebook"
+              style={{ color: '#3b5998' }}
             >
               <FaFacebookF />
             </a>
@@ -46,7 +47,9 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="mr-4 text-2xl md:text-3xl"
               aria-label="Instagram"
+              style={{ color: '#E1306C' }}
             >
+
               <FaInstagram />
             </a>
             <a
@@ -55,6 +58,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="mr-4 text-2xl md:text-3xl"
               aria-label="Twitter"
+              style={{ color: '#1DA1F2' }}
             >
               <FaTwitter />
             </a>
