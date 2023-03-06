@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/services": [
+    "/stylists/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/services.js"
+      "static/chunks/pages/stylists/[slug].js"
     ]
   },
   "ampFirstPages": []

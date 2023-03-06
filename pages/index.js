@@ -37,5 +37,6 @@ export async function getStaticProps() {
       stylists,
       announcements,
     },
+    revalidate: 60, // revalidate every 60 seconds
   };
 }
