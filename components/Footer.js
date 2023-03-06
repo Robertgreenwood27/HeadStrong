@@ -25,17 +25,14 @@ export default function Footer() {
               <Link href="/contact" legacyBehavior>
                 <a className="my-1 md:my-0 md:mr-4">Contact</a>
               </Link>
-              <Link href="/privacy" legacyBehavior>
-                <a className="my-1 md:my-0 md:mr-4">Privacy</a>
-              </Link>
-              <Link href="/terms" legacyBehavior>
+              <Link href="/about" legacyBehavior>
                 <a className="my-1 md:my-0">Terms</a>
               </Link>
             </div>
           </div>
           <div className="flex items-center mt-4 md:mt-0">
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/headstronghairandnailstudio"
               target="_blank"
               rel="noopener noreferrer"
               className="mr-4 text-2xl md:text-3xl"
@@ -44,7 +41,7 @@ export default function Footer() {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/headstrongpueblo/"
               target="_blank"
               rel="noopener noreferrer"
               className="mr-4 text-2xl md:text-3xl"

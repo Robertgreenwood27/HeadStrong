@@ -6,6 +6,8 @@ import Masonry from "react-masonry-css";
 import AnnouncementBanner from "../../components/StylistAnnouncement";
 import SectionDivider from "../../components/Divider";
 import Gallery from "../../components/Gallery";
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function StylistPage({ stylist }) {
   const { name, imageUrl } = stylist;
@@ -18,8 +20,27 @@ export default function StylistPage({ stylist }) {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
           <h1 className="text-4xl md:text-6xl mb-4 text-center">{name}</h1>
           <StylistPicture imageUrl={imageUrl} name={name} />
-        </div>
+     
 
+        <div className="flex justify-center mb-4">
+        {stylist.facebook && (
+  <Link href={stylist.facebook} legacyBehavior>
+    <a target="_blank" rel="noopener noreferrer" className="mr-4">
+    <FaFacebookF size={36} style={{ color: '#3b5998' }} />
+    </a>
+  </Link>
+)}
+{stylist.instagram && (
+  <Link href={stylist.instagram} legacyBehavior>
+    <a target="_blank" rel="noopener noreferrer">
+    <FaInstagram size={36} style={{ color: '#E1306C' }} />
+    </a>
+  </Link>
+)}
+
+</div>
+
+</div>
         <div>
   {stylist.announcements && stylist.announcements.length > 0 && stylist.announcements.map((announcement) => (
     <AnnouncementBanner announcement={announcement} key={announcement._key} />
@@ -62,31 +83,34 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
 
   const stylist = await client.fetch(`
-    *[_type == "stylist" && slug.current == $slug][0] {
+  *[_type == "stylist" && slug.current == $slug][0] {
+    name,
+    picture,
+    "imageUrl": picture.asset->url,
+    services[] {
       name,
       picture,
       "imageUrl": picture.asset->url,
-      services[] {
-        name,
-        picture,
-        "imageUrl": picture.asset->url,
-        description,
+      description,
+    },
+    announcements[] {
+      title,
+      body,
+      picture,
+      "imageUrl": picture.asset->url,
+      active,
+    },
+    gallery[] {
+      asset-> {
+        _id,
+        url,
       },
-      announcements[] {
-        title,
-        body,
-        picture,
-        "imageUrl": picture.asset->url,
-        active,
-      },
-      gallery[] {
-        asset-> {
-          _id,
-          url,
-        },
-        description,
-      }
-    }
+      description,
+    },
+    facebook,
+    instagram
+  }
+  
   `, { slug });
 
   return {

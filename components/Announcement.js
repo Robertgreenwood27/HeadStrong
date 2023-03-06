@@ -19,24 +19,21 @@ export default function Announcement({ announcement }) {
 
   return (
     <div className="my-40">
-    <Link href={`/announcements/${slug.current}`} legacyBehavior>
-      <a className="block rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 w-4/5 m-auto mt-2">
-        <div className="relative h-60 flex items-center justify-center">
-        <img
-    src={imageUrl}
-    alt={announcement.title}
-    className="absolute h-full w-full object-cover z-10"
-  />
-          <div className="absolute bg-white bg-opacity-80 p-4 z-20 text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
-            <p className="text-gray-600 text-lg">{description}</p>
+      <Link href={`/announcements/${slug.current}`} legacyBehavior>
+        <a className="block rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 w-4/5 m-auto mt-2">
+          <div className="relative flex items-center justify-center rounded-lg overflow-hidden h-64">
+            <img
+              src={imageUrl}
+              alt={announcement.title}
+              className="absolute h-full w-full object-cover z-10"
+            />
+            <div className="absolute bg-white bg-opacity-80 p-4 z-20 text-center rounded-lg">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
+              <p className="text-gray-600 text-lg">{description}</p>
+            </div>
           </div>
-        </div>
-      </a>
-    </Link>
+        </a>
+      </Link>
     </div>
   );
 }
-
-
-
