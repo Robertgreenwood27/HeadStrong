@@ -21,11 +21,6 @@ const navData = [
     name: "About",
     href: "/about",
   },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-
 ];
 
 export default function Header() {
