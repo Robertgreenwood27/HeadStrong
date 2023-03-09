@@ -53,16 +53,6 @@ export default function Footer() {
 
               <FaInstagram />
             </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-4 text-2xl md:text-3xl"
-              aria-label="Twitter"
-              style={{ color: '#1DA1F2' }}
-            >
-              <FaTwitter />
-            </a>
           </div>
         </div>
         <p className="mt-8 text-center text-sm">

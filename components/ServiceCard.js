@@ -14,14 +14,16 @@ export default function ServiceCard({ service }) {
   const cardClasses = `bg-zinc-800 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:-translate-y-1 ${hovered ? 'scale-105' : ''}`;
 
   return (
-    <div
-      className={cardClasses}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {imgUrl && <img src={imgUrl} alt={name} className="rounded-lg mb-4" />}
-      <h2 className="text-xl font-bold mb-2 text-white">{name}</h2>
-      <p className="text-gray-300">{description}</p>
-    </div>
+    <a href="https://headstrong.glossgenius.com/" target="_blank" rel="noopener noreferrer">
+      <div
+        className={cardClasses}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {imgUrl && <img src={imgUrl} alt={name} className="rounded-lg mb-4" />}
+        <h2 className="text-xl font-bold mb-2 text-white">{name}</h2>
+        <p className="text-gray-300">{description}</p>
+      </div>
+    </a>
   );
 }
