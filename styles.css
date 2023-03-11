@@ -22,5 +22,16 @@
     font-family: 'Amarante', cursive;
   }
   
- 
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  
+  
+  
+  
+
+  
   

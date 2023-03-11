@@ -5,7 +5,7 @@ import ServiceCard from "../components/ServiceCard";
 
 export default function ServicesPage({ stylists }) {
   return (
-    <div className="bg-zinc-900 min-h-screen text-white py-20">
+    <div className="bg-zinc-900 min-h-screen text-white py-12 text-center">
       <Head>
         <title>Services - Headstrong</title>
       </Head>

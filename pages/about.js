@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="mx-auto max-w-md px-4 py-52">
+    <div className="mx-auto max-w-md px-4">
       <h2 className="text-3xl font-bold mb-4">Business Hours</h2>
       <ul className="list-disc ml-4 mb-8">
         <li className="mb-2">Monday: 10 AM - 5 PM</li>

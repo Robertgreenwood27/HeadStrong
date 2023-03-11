@@ -6,7 +6,7 @@ import Stylists from '../components/Stylists';
 
 export default function IndexPage({ announcements, stylists }) {
   return (
-    <div>
+    <div className='text-center'>
       <section>
      <HeroSection/>
      </section>

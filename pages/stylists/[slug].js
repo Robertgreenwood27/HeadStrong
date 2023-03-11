@@ -14,7 +14,7 @@ export default function StylistPage({ stylist }) {
   const breakpointColumnsObj = { default: 3, 1100: 2, 700: 1 };
 
   return (
-    <div className="bg-zinc-900 min-h-screen text-white py-20">
+    <div className="bg-zinc-900 min-h-screen text-white py-12 text-center">
       <Head><title>{name} - Headstrong</title></Head>
       <div className="max-w-6xl mx-auto mt-10 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
