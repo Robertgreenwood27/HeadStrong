@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import client from '../sanity.config';
-import Link from 'next/link';
 import imageUrlBuilder from '@sanity/image-url';
 
 const builder = imageUrlBuilder(client);
@@ -10,29 +9,53 @@ function urlFor(source) {
 }
 
 export default function Announcement({ announcement }) {
-    const { title, slug, description, image, active } = announcement;
-    const imageUrl = announcement.imageUrl ? announcement.imageUrl : urlFor(announcement.image).width(600).height(1200).crop('focalpoint').url();
-  
-    if (!active) {
-      return null;
-    }
+  const { title, description, image, active } = announcement;
+  const [screenHeight, setScreenHeight] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenHeight(window.innerHeight);
+      setScreenWidth(window.innerWidth);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  if (!active) {
+    return null;
+  }
+
+  const imageUrl = announcement.imageUrl
+    ? announcement.imageUrl
+    : urlFor(announcement.image)
+        .width(1200)
+        .height(600)
+        .crop('focalpoint')
+        .url();
+
+        const sectionStyle = {
+          backgroundImage: `url(${imageUrl})`,
+          height: '100vh',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '0 20px',
+ 
+        };
+        
+        
 
   return (
-    <div className="my-40">
-        <div className="block rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 w-4/5 m-auto mt-2">
-          <div className="relative flex items-center justify-center rounded-lg overflow-hidden h-64">
-            <img
-              src={imageUrl}
-              alt={announcement.title}
-              className="absolute h-full w-full object-cover z-10"
-            />
-            <div className="absolute bg-white bg-opacity-80 p-4 z-20 text-center rounded-lg">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
-              <p className="text-gray-600 text-lg">{description}</p>
-            </div>
-          </div>
-        </div>
-
-    </div>
+    <section style={sectionStyle}>
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">{title}</h2>
+        <p className="text-lg md:text-xl lg:text-2xl text-white">{description}</p>
+      </div>
+    </section>
   );
 }

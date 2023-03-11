@@ -22,16 +22,15 @@ export default function IndexPage({ announcements, stylists }) {
      <section>
      <Stylists stylists={stylists} />
      </section>
-     {/* 
-     I need to show services here
-     */}
      </div>
   );
 }
 
 export async function getStaticProps() {
   const stylists = await client.fetch('*[_type == "stylist"]');
-  const announcements = await client.fetch('*[_type == "announcement"]');
+  const announcements = await client.fetch('*[_type == "announcement"] | order(_createdAt asc)');
+
+
 
   return {
     props: {
