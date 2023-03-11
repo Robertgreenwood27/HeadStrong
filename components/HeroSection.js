@@ -33,34 +33,18 @@ export default function HeroSection() {
 
   const arrowStyle = {
     position: 'absolute',
-    bottom: '20px',
+    bottom: '60px',
     left: '50%',
-    transform: 'translateX(-50%)',
     zIndex: 2,
-    animation: 'bounce 2s infinite',
+
   };
-  
-  // Define the bounce animation using keyframes
-  const styles = `
-    @keyframes bounce {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-  `;
+
 
   return (
     <div style={containerStyle}>
-    <style>{styles}</style>
     <div style={divStyle}>
         <div className="text-white relative z-10 text-center">
-          <img src="/HeadstrongLogo.svg" alt="Headstrong Salon" style={{ pointerEvents: 'none' }}/>
+          <img src="/HeadstrongLogo.svg" alt="Headstrong Salon"/>
         </div>
         <div style={arrowStyle}>
         <FontAwesomeIcon icon={faChevronDown} size="2x" color="#fff" />
