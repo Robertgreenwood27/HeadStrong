@@ -23,12 +23,6 @@ export default function Footer() {
               <Link href="/about" legacyBehavior>
                 <a className="my-1 md:my-0 md:mr-4">About</a>
               </Link>
-              <Link href="/contact" legacyBehavior>
-                <a className="my-1 md:my-0 md:mr-4">Contact</a>
-              </Link>
-              <Link href="/about" legacyBehavior>
-                <a className="my-1 md:my-0">Terms</a>
-              </Link>
             </div>
           </div>
           <div className="flex items-center mt-4 md:mt-0">
