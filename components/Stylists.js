@@ -18,11 +18,14 @@ export default function Stylists({ stylists }) {
           <li key={stylist._id}>
             <Link href={`/stylists/${stylist.slug.current}`} legacyBehavior>
               <a className="block hover:opacity-75 bg-white text-black rounded-lg border-2 border-gray-300" aria-label={`Learn more about ${stylist.name}`}>
-                <img
-                  className="object-cover w-full h-full rounded-t-lg"
-                  src={urlFor(stylist.picture).width(600).height(1200).crop('entropy').url()}
-                  alt={stylist.name}
-                />
+                <div style={{ height: '450px', overflow: 'hidden' }}>
+                  <img
+                    className="object-cover w-full h-full rounded-md"
+                    src={urlFor(stylist.picture).width(600).height(1200).crop('entropy').url()}
+                    alt={stylist.name}
+                    style={{ marginTop: '1px' }}
+                  />
+                </div>
                 <div className="p-4">
                   <h2 className="text-lg font-bold mb-2">{stylist.name}</h2>
                   <p className="text-gray-600">{stylist.description}</p>
