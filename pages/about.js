@@ -111,7 +111,7 @@ function AboutPage() {
 
         <h2 className="text-3xl font-bold mb-4">Address</h2>
         <p className="text-lg mb-4">154 Tiffany Dr Pueblo West, CO 81007</p>
-        <p className="text-lg mb-4"><a href="tel:+17192258578"><FaPhone />(719)225-8578</a></p>
+        <p className="text-lg mb-4"><a href="tel:+17192258578"><FaPhone /> (719)225-8578</a></p>
         
         <h2 className="text-3xl font-bold mb-4">Cancellation Policy</h2>
         <p className="text-lg mb-4">
@@ -119,11 +119,6 @@ function AboutPage() {
         </p>
       </div>
       <div ref={mapRef} style={{ width: '100%', height: '400px' }}></div>
-  <div className="mt-16 sm:hidden">
-        <h2 className="text-3xl font-bold mb-4">Address</h2>
-        <p className="text-lg mb-4">154 Tiffany Dr Pueblo West, CO 81007</p>
-        <p className="text-3xl font-bold mb-4"><FaPhone /> <a href="tel:+17192258578">(719)225-8578</a></p>
-      </div>
     </div>
   );
 }
