@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { FaPhone } from 'react-icons/fa';
+
 
 function AboutPage() {
   const mapRef = useRef(null);
@@ -106,6 +108,11 @@ function AboutPage() {
           <li className="mb-2">Saturday: 10 AM - 5 PM</li>
           <li className="mb-2">Sunday: CLOSED</li>
         </ul>
+
+        <h2 className="text-3xl font-bold mb-4">Address</h2>
+        <p className="text-lg mb-4">154 Tiffany Dr Pueblo West, CO 81007</p>
+        <p className="text-lg mb-4"><a href="tel:+17192258578"><FaPhone />(719)225-8578</a></p>
+        
         <h2 className="text-3xl font-bold mb-4">Cancellation Policy</h2>
         <p className="text-lg mb-4">
           A 50% cancellation fee will be charged for all cancellations or no-shows with less than 24 hours notice of the scheduled appointment time.
@@ -115,6 +122,7 @@ function AboutPage() {
   <div className="mt-16 sm:hidden">
         <h2 className="text-3xl font-bold mb-4">Address</h2>
         <p className="text-lg mb-4">154 Tiffany Dr Pueblo West, CO 81007</p>
+        <p className="text-3xl font-bold mb-4"><FaPhone /> <a href="tel:+17192258578">(719)225-8578</a></p>
       </div>
     </div>
   );
