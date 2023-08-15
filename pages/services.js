@@ -25,7 +25,7 @@ export default function ServicesPage({ stylists }) {
                       </a>
                     </Link>
                     <a
-                      href="https://headstrong.glossgenius.com/"
+                      href="https://booking.mangomint.com/headstronghairnailstudio"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded"

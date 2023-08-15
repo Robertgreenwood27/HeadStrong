@@ -6,7 +6,7 @@ import Link from "next/link";
 const navData = [
   {
     name: "Book",
-    href: "https://headstrong.glossgenius.com/",
+    href: "https://booking.mangomint.com/headstronghairnailstudio",
     target: "_blank",
   },
   {
