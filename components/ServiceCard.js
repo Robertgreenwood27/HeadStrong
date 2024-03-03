@@ -14,7 +14,7 @@ export default function ServiceCard({ service }) {
   const cardClasses = `bg-zinc-800 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:-translate-y-1 ${hovered ? 'scale-105' : ''}`;
 
   return (
-    <a href="https://booking.mangomint.com/headstronghairnailstudio" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.fresha.com/a/headstrong-hair-and-nail-studio-pueblo-west-154-tiffany-drive-j7kcd6r0/booking?menu=true" target="_blank" rel="noopener noreferrer">
       <div
         className={cardClasses}
         onMouseEnter={() => setHovered(true)}

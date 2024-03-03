@@ -6,7 +6,7 @@ import Link from "next/link";
 const navData = [
   {
     name: "Book",
-    href: "https://booking.mangomint.com/headstronghairnailstudio",
+    href: "https://www.fresha.com/a/headstrong-hair-and-nail-studio-pueblo-west-154-tiffany-drive-j7kcd6r0/booking?menu=true",
     target: "_blank",
   },
   {

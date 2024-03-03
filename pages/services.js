@@ -25,7 +25,7 @@ export default function ServicesPage({ stylists }) {
                       </a>
                     </Link>
                     <a
-                      href="https://booking.mangomint.com/headstronghairnailstudio"
+                      href="https://www.fresha.com/a/headstrong-hair-and-nail-studio-pueblo-west-154-tiffany-drive-j7kcd6r0/booking?menu=true"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded"
