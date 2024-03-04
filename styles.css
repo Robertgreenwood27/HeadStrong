@@ -67,3 +67,8 @@
   color: black; /* Change text color on hover */
   transform: translateX(-50%) scale(1.05); /* Slightly increase size */
 }
+
+
+html {
+  background-color: black;
+}
