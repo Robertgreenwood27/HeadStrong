@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 import client from '../sanity.config';
 import imageUrlBuilder from '@sanity/image-url';
 
@@ -10,15 +12,23 @@ function urlFor(source) {
 }
 
 export default function Stylists({ stylists }) {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // AOS animation duration
+      once: true, // Whether animation should happen only once - while scrolling down
+    });
+  }, []);
+
   return (
     <div className="container mx-auto my-12 px-4 lg:px-12">
       <h1 className="text-4xl font-bold mb-12">Meet The Stylists</h1>
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
         {stylists.map((stylist) => (
-          <li key={stylist._id}>
+          <li key={stylist._id} data-aos="slide-up">
             <Link href={`/stylists/${stylist.slug.current}`} legacyBehavior>
               <a className="block hover:opacity-75 bg-black text-white rounded-lg border-2 border-black" aria-label={`Learn more about ${stylist.name}`}>
-              <div style={{ height: '350px', overflow: 'hidden' }}>
+                <div style={{ height: '350px', overflow: 'hidden' }}>
                   <img
                     className="object-cover w-full h-full rounded-md"
                     src={urlFor(stylist.picture).width(300).height(600).crop('entropy').url()}
