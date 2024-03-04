@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }) {
     <div className="bg-zinc-900 text-zinc-300">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Your Site Title</title> {/* You can also set a default title for all pages here */}
+        <title>HeadStrong</title> {/* You can also set a default title for all pages here */}
       </Head>
       <Header />
       <div className="py-16">
