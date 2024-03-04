@@ -17,7 +17,7 @@ export default function Stylists({ stylists }) {
         {stylists.map((stylist) => (
           <li key={stylist._id}>
             <Link href={`/stylists/${stylist.slug.current}`} legacyBehavior>
-              <a className="block hover:opacity-75 bg-white text-black rounded-lg border-2 border-gray-300" aria-label={`Learn more about ${stylist.name}`}>
+              <a className="block hover:opacity-75 bg-black text-white rounded-lg border-2 border-black" aria-label={`Learn more about ${stylist.name}`}>
                 <div style={{ height: '450px', overflow: 'hidden' }}>
                   <img
                     className="object-cover w-full h-full rounded-md"

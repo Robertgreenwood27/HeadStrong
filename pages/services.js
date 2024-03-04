@@ -18,21 +18,6 @@ export default function ServicesPage({ stylists }) {
               {stylist.services.map((service) => (
                 <div key={service._key}>
                   <ServiceCard service={service} />
-                  <div className="flex justify-between items-center mt-2">
-                    <Link href={`/stylists/${stylist.slug.current}`} legacyBehavior>
-                      <a className="text-blue-400 hover:underline">
-                        View stylist
-                      </a>
-                    </Link>
-                    <a
-                      href="https://www.fresha.com/a/headstrong-hair-and-nail-studio-pueblo-west-154-tiffany-drive-j7kcd6r0/booking?menu=true"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded"
-                    >
-                      Book now
-                    </a>
-                  </div>
                 </div>
               ))}
             </div>
