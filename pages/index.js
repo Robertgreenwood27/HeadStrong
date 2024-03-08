@@ -40,7 +40,6 @@ export default function IndexPage({ announcements, stylists, allServices }) {
       </section>
 
       <section className="py-12" data-aos="fade-right">
-        <h2 className="text-3xl font-bold mb-6">Our Stylists</h2>
         <Stylists stylists={stylists} />
       </section>
 
