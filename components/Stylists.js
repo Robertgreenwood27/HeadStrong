@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css';
 import client from '../sanity.config';
 import imageUrlBuilder from '@sanity/image-url';
 
@@ -12,33 +12,30 @@ function urlFor(source) {
 }
 
 export default function Stylists({ stylists }) {
-  // Initialize AOS
   useEffect(() => {
     AOS.init({
-      duration: 800, // AOS animation duration
-      once: true, // Whether animation should happen only once - while scrolling down
+      duration: 800,
+      once: true,
     });
   }, []);
 
   return (
-    <div className="container mx-auto my-12 px-4 lg:px-12">
-      <h1 className="text-4xl font-bold mb-12">Meet The Stylists</h1>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-        {stylists.map((stylist) => (
-          <li key={stylist._id} data-aos="slide-up">
+    <div className="container mx-auto px-4 lg:px-12">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {stylists.map((stylist, index) => (
+          <li key={stylist._id} data-aos="fade-up" data-aos-delay={index * 200}>
             <Link href={`/stylists/${stylist.slug.current}`} legacyBehavior>
-              <a className="block hover:opacity-75 bg-black text-white rounded-lg border-2 border-black" aria-label={`Learn more about ${stylist.name}`}>
-                <div style={{ height: '350px', overflow: 'hidden' }}>
+              <a className="block relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div className="relative pt-[100%]">
                   <img
-                    className="object-cover w-full h-full rounded-md"
-                    src={urlFor(stylist.picture).width(300).height(600).crop('entropy').url()}
+                    className="absolute inset-0 w-full h-full object-cover transform hover:scale-110 transition duration-500"
+                    src={urlFor(stylist.picture).width(600).height(600).crop('focalpoint').url()}
                     alt={stylist.name}
-                    style={{ marginTop: '1px' }}
                   />
                 </div>
-                <div className="p-4">
-                  <h2 className="text-lg font-bold mb-2">{stylist.name}</h2>
-                  <p className="text-gray-600">{stylist.description}</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
+                  <h3 className="text-xl font-bold mb-2">{stylist.name}</h3>
+                  <p className="text-sm">{stylist.description}</p>
                 </div>
               </a>
             </Link>

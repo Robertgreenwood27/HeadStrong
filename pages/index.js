@@ -29,21 +29,12 @@ export default function IndexPage({ announcements, stylists, allServices }) {
         <HeroSection />
       </section>
 
-      <section className="py-12" data-aos="fade-left">
-        <ul>
-          {announcements.map(announcement => (
-            <li key={announcement._id}>
-              <Announcement announcement={announcement} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="py-12" data-aos="fade-right">
+      <section className="py-12 mt-32" data-aos="fade-right">
+        <h2 className="text-3xl font-bold mb-6">Meet The Stylists</h2>
         <Stylists stylists={stylists} />
       </section>
 
-      <section className="py-12" data-aos="fade-up">
+      <section className="py-12 bg-black" data-aos="fade-up">
         <h2 className="text-3xl font-bold mb-6">Our Services</h2>
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -61,19 +52,20 @@ export default function IndexPage({ announcements, stylists, allServices }) {
   );
 }
 
-export async function getStaticProps() {
-    const stylists = await client.fetch('*[_type == "stylist"]{ ..., services[]{ ..., "imageUrl": picture.asset->url }}');
-    const announcements = await client.fetch('*[_type == "announcement"] | order(_createdAt asc)');
-    
-    // Construct allServices array
-    const allServices = stylists.flatMap(stylist => stylist.services.map(service => ({...service, stylistName: stylist.name})));
 
-    return {
-        props: {
-            stylists,
-            announcements,
-            allServices, // Ensure this is passed as a prop
-        },
-        revalidate: 600,
-    };
+export async function getStaticProps() {
+  const stylists = await client.fetch('*[_type == "stylist"]{ ..., services[]{ ..., "imageUrl": picture.asset->url }}');
+  const announcements = await client.fetch('*[_type == "announcement"] | order(_createdAt asc)');
+  
+  // Construct allServices array
+  const allServices = stylists.flatMap(stylist => stylist.services.map(service => ({...service, stylistName: stylist.name})));
+
+  return {
+    props: {
+      stylists,
+      announcements,
+      allServices, // Ensure this is passed as a prop
+    },
+    revalidate: 600,
+  };
 }
