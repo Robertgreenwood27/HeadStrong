@@ -4,7 +4,7 @@ import Stylists from '../components/Stylists';
 
 export default function StylistPage({ stylists }) {
   return (
-    <div className="py-12 text-center">
+    <div className="py-12 text-center mt-32">
       <Stylists stylists={stylists} />
     </div>
   );
